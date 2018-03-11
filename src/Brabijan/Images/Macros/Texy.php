@@ -8,6 +8,8 @@ use Nette;
 
 class Texy extends Nette\Object
 {
+	use Nette\SmartObject;
+
 	/**
 	 * @param \Texy|\Texy\Texy $texy
 	 * @param ImagePipe $imagePipe

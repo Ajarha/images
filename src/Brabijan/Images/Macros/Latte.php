@@ -26,7 +26,7 @@ class Latte extends MacroSet
 
 
 	/**
-	 * @param \Nette\Latte\Compiler $compiler
+	 * @param \Latte\Compiler $compiler
 	 *
 	 * @return ImgMacro|MacroSet
 	 */
@@ -45,17 +45,17 @@ class Latte extends MacroSet
 
 
 	/**
-	 * @param Nette\Latte\MacroNode $node
-	 * @param Nette\Latte\PhpWriter $writer
+	 * @param \Latte\MacroNode $node
+	 * @param \Latte\PhpWriter $writer
 	 * @return string
-	 * @throws Nette\Latte\CompileException
+	 * @throws \Latte\CompileException
 	 */
 	public function macroImg(MacroNode $node, PhpWriter $writer)
 	{
 		$this->isUsed = TRUE;
 		$arguments = Helpers::prepareMacroArguments($node->args);
 		if ($arguments["name"] === NULL) {
-			throw new Nette\Latte\CompileException("Please provide filename.");
+			throw new \Latte\CompileException("Please provide filename.");
 		}
 
 		$namespace = $arguments["namespace"];
@@ -74,17 +74,17 @@ class Latte extends MacroSet
 
 
 	/**
-	 * @param Nette\Latte\MacroNode $node
-	 * @param Nette\Latte\PhpWriter $writer
+	 * @param \Latte\MacroNode $node
+	 * @param \Latte\PhpWriter $writer
 	 * @return string
-	 * @throws Nette\Latte\CompileException
+	 * @throws \Latte\CompileException
 	 */
 	public function macroAttrImg(MacroNode $node, PhpWriter $writer)
 	{
 		$this->isUsed = TRUE;
 		$arguments = Helpers::prepareMacroArguments($node->args);
 		if ($arguments["name"] === NULL) {
-			throw new Nette\Latte\CompileException("Please provide filename.");
+			throw new \Latte\CompileException("Please provide filename.");
 		}
 
 		$namespace = $arguments["namespace"];
@@ -131,12 +131,12 @@ class Latte extends MacroSet
 
 
 	/**
-	 * @param Latte\Runtime\Template|Nette\Application\UI\Template $template
+	 * @param \Latte\Runtime\Template|Nette\Application\UI\ITemplate $template
 	 * @throws \Nette\InvalidStateException
 	 */
 	public static function validateTemplateParams($template)
 	{
-        if (!($template instanceof \Latte\Runtime\Template) && !($template instanceof \Nette\Application\UI\Template)) {
+        if (!($template instanceof \Latte\Runtime\Template) && !($template instanceof \Nette\Application\UI\ITemplate)) {
             throw new \InvalidArgumentException('$template has to be instance of LR\Template or Nette\Templating\Template, instance of ' . get_class($template) . ' given.');
         }
 

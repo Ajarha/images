@@ -29,12 +29,12 @@ trait TImagePipe
 	/**
 	 * @param string $class
 	 *
-	 * @return Nette\Templating\FileTemplate
+	 * @return Nette\Application\UI\ITemplate
 	 */
 	protected function createTemplate($class = NULL)
 	{
 		$template = parent::createTemplate($class);
-		/** @var \Nette\Templating\FileTemplate|\stdClass $template */
+		/** @var \Nette\Application\UI\ITemplate|\stdClass $template */
 		$template->_imagePipe = $this->imgPipe;
 
 		return $template;

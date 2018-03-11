@@ -8,8 +8,9 @@ use Nette\Utils\Image as NImage;
 /**
  * @author Jan Brabec <brabijan@gmail.com>
  */
-class ImagePipe extends Nette\Object
+class ImagePipe
 {
+	use Nette\SmartObject;
 
 	/** @var string */
 	protected $assetsDir;
@@ -152,7 +153,7 @@ class ImagePipe extends Nette\Object
 	 * @param null $flags
 	 * @param bool $strictMode
 	 * @return string
-	 * @throws \Nette\Latte\CompileException
+	 * @throws \Latte\CompileException
 	 * @throws FileNotFoundException;
 	 */
 	public function request($image, $size = NULL, $flags = NULL, $strictMode = FALSE)
@@ -190,7 +191,7 @@ class ImagePipe extends Nette\Object
 					break;
 			endswitch;
 			if (!isset($flags)) {
-				throw new Nette\Latte\CompileException('Mode is not allowed');
+				throw new \Latte\CompileException('Mode is not allowed');
 			}
 		}
 

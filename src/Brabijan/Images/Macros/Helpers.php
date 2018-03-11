@@ -4,8 +4,9 @@ namespace Brabijan\Images\Macros;
 
 use Nette;
 
-class Helpers extends Nette\Object
+class Helpers
 {
+	use Nette\SmartObject;
 
 	public static function prepareMacroArguments($macro)
 	{

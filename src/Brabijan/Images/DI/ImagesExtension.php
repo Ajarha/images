@@ -2,7 +2,6 @@
 
 namespace Brabijan\Images\DI;
 
-use Latte;
 use Nette;
 use Nette\DI\Compiler;
 use Nette\DI\Configurator;
@@ -48,7 +47,7 @@ class ImagesExtension extends Nette\DI\CompilerExtension
 
 
 	/**
-	 * @param \Nette\Config\Configurator $config
+	 * @param \Nette\DI\Configurator $config
 	 * @param string $extensionName
 	 */
 	public static function register(Configurator $config, $extensionName = 'imagesExtension')

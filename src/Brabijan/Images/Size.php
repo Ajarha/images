@@ -10,8 +10,9 @@ use Nette;
  * @property-read float|int $width
  * @property-read float|int $height
  */
-class Size extends Nette\Object
+class Size
 {
+	use Nette\SmartObject;
 
 	/** @var float|int */
 	private $width;
