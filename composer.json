@@ -24,7 +24,9 @@
 	  	"nette/finder": "~2.2"
 	},
 	"require-dev": {
-		"nette/tester": "@dev"
+		"nette/tester": "@dev",
+		"nette/application": "~2.2",
+		"texy/texy": "~2.9"
 	},
 	"autoload": {
 		"psr-0": {
